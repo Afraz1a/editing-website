@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Editing Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="hero-bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="blob blob-4"></div>
+  </div>
+
+  <header class="header">
+    <a href="#" class="logo-wrap">
+      <!-- Your icon: using icon.jpg in the same folder -->
+      <div class="icon-placeholder icon-placeholder-header">
+        <img src="icon.jpg" alt="You" id="header-icon" class="icon-img" />
+        <span class="icon-fallback">You</span>
+      </div>
+      <span class="logo">Portfolio</span>
+    </a>
+    <nav class="nav">
+      <a href="#work">Work</a>
+      <a href="#creators">Creators</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <!-- Your photo: using icon.jpg in the same folder -->
+      <div class="hero-icon-wrap reveal">
+        <div class="hero-icon-placeholder">
+          <img src="icon.jpg" alt="Your photo" id="hero-icon" class="hero-icon-img" />
+          <span class="hero-icon-fallback">
+            <span class="hero-icon-text">Your photo</span>
+          </span>
+        </div>
+      </div>
+      <p class="hero-label reveal">Video Editor</p>
+      <h1 class="hero-title reveal">Engage. Entertain. Elevate.</h1>
+      <p class="hero-tagline reveal">
+        I craft fast-paced, story-driven edits for creators, brands, and streamers.
+        Smooth pacing, punchy transitions, and sound design that hits.
+      </p>
+      <div class="hero-cta reveal">
+        <a href="#work" class="btn btn-primary">Watch my edits</a>
+        <a href="#contact" class="btn btn-secondary">Connect with me</a>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stats-inner">
+        <div class="stat reveal">
+          <span class="stat-value" data-count="40">0</span>
+          <span class="stat-suffix">+</span>
+          <span class="stat-label">Creators worked with</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat-value" data-count="250">0</span>
+          <span class="stat-suffix">+</span>
+          <span class="stat-label">Videos delivered</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat-value" data-count="72">0</span>
+          <span class="stat-suffix">h</span>
+          <span class="stat-label">Average turnaround</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-strip">
+      <p class="reveal">Making videos that leave an impact – storytelling that captivates.</p>
+      <a href="#contact" class="link-accent reveal">Let's talk</a>
+    </section>
+
+    <section id="creators" class="creators">
+      <h2 class="section-title reveal">Creators I've worked with</h2>
+      <p class="section-desc reveal">
+        A quick highlight reel of channels and brands I've helped grow with consistent, high-retention edits.
+      </p>
+      <div class="carousel carousel-scroll creators-carousel">
+        <button type="button" class="carousel-btn carousel-prev" aria-label="Scroll back">‹</button>
+        <button type="button" class="carousel-btn carousel-next" aria-label="Scroll forward">›</button>
+        <div class="carousel-track-wrap">
+          <div class="carousel-track creators-track">
+            <article class="creator-card">
+              <div class="creator-placeholder creator-logo">
+                <img src="memntoe.png" alt="Mementoe" loading="lazy" />
+              </div>
+              <h3>Mementoe</h3>
+              <p>3.1M+ Subscribers · Gaming & Shorts</p>
+            </article>
+            <article class="creator-card">
+              <div class="creator-placeholder creator-logo">
+                <img src="tayo.png" alt="Tayo Ricci" loading="lazy" />
+              </div>
+              <h3>Tayo Ricci</h3>
+              <p>3M+ Subscribers · Shorts & Musician</p>
+            </article>
+            <article class="creator-card">
+              <div class="creator-placeholder creator-logo">
+                <img src="viralclub.png" alt="ViralClub" loading="lazy" />
+              </div>
+              <h3>ViralClub</h3>
+              <p>120k+ Subscribers · Podcast Clipping</p>
+            </article>
+            <article class="creator-card">
+              <div class="creator-placeholder creator-logo">
+                <img src="yash.png" alt="Yash Sharma Fitness" loading="lazy" />
+              </div>
+              <h3>Yash Sharma Fitness</h3>
+              <p>500K+ Subscribers · Fitness & Lifestyle</p>
+            </article>
+            <article class="creator-card">
+              <div class="creator-placeholder creator-logo">
+                <img src="ryan.png" alt="Ryan Haff" loading="lazy" />
+              </div>
+              <h3>Ryan Haff</h3>
+              <p>140k+ Followers · Fitness & Nutrition</p>
+            </article>
+            <article class="creator-card">
+              <div class="creator-placeholder creator-logo">
+                <img src="curve.png" alt="Curve Media" loading="lazy" />
+              </div>
+              <h3>Curve Media</h3>
+              <p>Documentary · Motion Graphics</p>
+            </article>
+            <!-- duplicate set for seamless loop -->
+            <article class="creator-card">
+              <div class="creator-placeholder creator-logo">
+                <img src="memntoe.png" alt="Mementoe" loading="lazy" />
+              </div>
+              <h3>Mementoe</h3>
+              <p>3.1M+ Subscribers · Gaming & Shorts</p>
+            </article>
+            <article class="creator-card">
+              <div class="creator-placeholder creator-logo">
+                <img src="tayo.png" alt="Tayo Ricci" loading="lazy" />
+              </div>
+              <h3>Tayo Ricci</h3>
+              <p>3M+ Subscribers · Shorts & Musician</p>
+            </article>
+            <article class="creator-card">
+              <div class="creator-placeholder creator-logo">
+                <img src="viralclub.png" alt="ViralClub" loading="lazy" />
+              </div>
+              <h3>ViralClub</h3>
+              <p>120k+ Subscribers · Podcast Clipping</p>
+            </article>
+            <article class="creator-card">
+              <div class="creator-placeholder creator-logo">
+                <img src="yash.png" alt="Yash Sharma Fitness" loading="lazy" />
+              </div>
+              <h3>Yash Sharma Fitness</h3>
+              <p>500K+ Subscribers · Fitness & Lifestyle</p>
+            </article>
+            <article class="creator-card">
+              <div class="creator-placeholder creator-logo">
+                <img src="ryan.png" alt="Ryan Haff" loading="lazy" />
+              </div>
+              <h3>Ryan Haff</h3>
+              <p>140k+ Followers · Fitness & Nutrition</p>
+            </article>
+            <article class="creator-card">
+              <div class="creator-placeholder creator-logo">
+                <img src="dude.png" alt="Dude Real Media" loading="lazy" />
+              </div>
+              <h3>Dude Real Media</h3>
+              <p>180k+ Subscribers · Clipping</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="edits">
+      <h2 class="section-title reveal">Featured edits</h2>
+      <p class="section-desc reveal">
+        A mix of long-form videos and short-form content. Hover for details.
+      </p>
+      <div class="carousel carousel-scroll edits-carousel">
+        <button type="button" class="carousel-btn carousel-prev" aria-label="Scroll back">‹</button>
+        <button type="button" class="carousel-btn carousel-next" aria-label="Scroll forward">›</button>
+        <div class="carousel-track-wrap">
+          <div class="carousel-track edits-track">
+            <article class="edit-card">
+              <a class="edit-link" href="https://www.youtube.com/watch?v=uVXnLMQs4x0" target="_blank" rel="noopener">
+                <div class="edit-thumb">
+                  <img src="https://img.youtube.com/vi/uVXnLMQs4x0/hqdefault.jpg" alt="Biggest Celebrity Crypto Scams Of All Time thumbnail" loading="lazy" />
+                  <span class="edit-platform">YouTube</span>
+                  <span class="edit-play">▶</span>
+                </div>
+              </a>
+              <h3>Biggest Celebrity Crypto Scams Of All Time</h3>
+              <p>Motion graphics, animation, and storytelling.</p>
+            </article>
+            <article class="edit-card">
+              <a class="edit-link" href="https://www.youtube.com/watch?v=Dx8pyPvpEJI" target="_blank" rel="noopener">
+                <div class="edit-thumb">
+                  <img src="https://img.youtube.com/vi/Dx8pyPvpEJI/hqdefault.jpg" alt="MrBeast's Journey from ZERO to HERO in Just 10 Years! thumbnail" loading="lazy" />
+                  <span class="edit-platform">YouTube</span>
+                  <span class="edit-play">▶</span>
+                </div>
+              </a>
+              <h3>MrBeast's Journey from ZERO to HERO in Just 10 Years!</h3>
+              <p>Intro clip with motion graphics.</p>
+            </article>
+            <article class="edit-card">
+              <a class="edit-link" href="https://player.vimeo.com/video/1166740503?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" target="_blank" rel="noopener">
+                <div class="edit-thumb">
+                  <iframe src="https://player.vimeo.com/video/1166740503?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" title="Reality of Money" loading="lazy" allowfullscreen></iframe>
+                  <span class="edit-platform">Vimeo</span>
+                  <span class="edit-play">▶</span>
+                </div>
+              </a>
+              <h3>Reality of Money</h3>
+              <p>Introduction clip with Motion Graphics.</p>
+            </article>
+            <article class="edit-card">
+              <a class="edit-link" href="https://player.vimeo.com/video/1166739507?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" target="_blank" rel="noopener">
+                <div class="edit-thumb">
+                  <iframe src="https://player.vimeo.com/video/1166739507?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" title="10 Second Clip from the Client's Video" loading="lazy" allowfullscreen></iframe>
+                  <span class="edit-platform">Vimeo</span>
+                  <span class="edit-play">▶</span>
+                </div>
+              </a>
+              <h3>10 Second Clip from the Client's Video</h3>
+              <p>Gaming content with fast pacing.</p>
+            </article>
+            <article class="edit-card">
+              <a class="edit-link" href="https://player.vimeo.com/video/1166747598?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" target="_blank" rel="noopener">
+                <div class="edit-thumb">
+                  <iframe src="https://player.vimeo.com/video/1166747598?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" title="Marketing Agency AD" loading="lazy" allowfullscreen></iframe>
+                  <span class="edit-platform">Vimeo</span>
+                  <span class="edit-play">▶</span>
+                </div>
+              </a>
+              <h3>Marketing Agency AD</h3>
+              <p>Professional motion graphics and branding.</p>
+            </article>
+            <article class="edit-card">
+              <a class="edit-link" href="https://player.vimeo.com/video/1166748259?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" target="_blank" rel="noopener">
+                <div class="edit-thumb">
+                  <iframe src="https://player.vimeo.com/video/1166748259?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" title="Trending Cat Videos" loading="lazy" allowfullscreen></iframe>
+                  <span class="edit-platform">Vimeo</span>
+                  <span class="edit-play">▶</span>
+                </div>
+              </a>
+              <h3>Trending Cat Videos</h3>
+              <p>Short-form content optimized for social media.</p>
+            </article>
+            <!-- duplicate set for seamless loop -->
+            <article class="edit-card">
+              <a class="edit-link" href="https://www.youtube.com/watch?v=uVXnLMQs4x0" target="_blank" rel="noopener">
+                <div class="edit-thumb">
+                  <img src="https://img.youtube.com/vi/uVXnLMQs4x0/hqdefault.jpg" alt="Biggest Celebrity Crypto Scams Of All Time thumbnail" loading="lazy" />
+                  <span class="edit-platform">YouTube</span>
+                  <span class="edit-play">▶</span>
+                </div>
+              </a>
+              <h3>Biggest Celebrity Crypto Scams Of All Time</h3>
+              <p>Motion graphics, animation, and storytelling.</p>
+            </article>
+            <article class="edit-card">
+              <a class="edit-link" href="https://www.youtube.com/watch?v=Dx8pyPvpEJI" target="_blank" rel="noopener">
+                <div class="edit-thumb">
+                  <img src="https://img.youtube.com/vi/Dx8pyPvpEJI/hqdefault.jpg" alt="MrBeast's Journey from ZERO to HERO in Just 10 Years! thumbnail" loading="lazy" />
+                  <span class="edit-platform">YouTube</span>
+                  <span class="edit-play">▶</span>
+                </div>
+              </a>
+              <h3>MrBeast's Journey from ZERO to HERO in Just 10 Years!</h3>
+              <p>Motion Graphics, Animation, and storytelling.</p>
+            </article>
+            <article class="edit-card">
+              <a class="edit-link" href="https://player.vimeo.com/video/1166740503?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" target="_blank" rel="noopener">
+                <div class="edit-thumb">
+                  <iframe src="https://player.vimeo.com/video/1166740503?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" title="Reality of Money" loading="lazy" allowfullscreen></iframe>
+                  <span class="edit-platform">Vimeo</span>
+                  <span class="edit-play">▶</span>
+                </div>
+              </a>
+              <h3>Reality of Money</h3>
+              <p>Introduction clip with Motion Graphics.</p>
+            </article>
+            <article class="edit-card">
+              <a class="edit-link" href="https://player.vimeo.com/video/1166739507?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" target="_blank" rel="noopener">
+                <div class="edit-thumb">
+                  <iframe src="https://player.vimeo.com/video/1166739507?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" title="10 Second Clip from the Client's Video" loading="lazy" allowfullscreen></iframe>
+                  <span class="edit-platform">Vimeo</span>
+                  <span class="edit-play">▶</span>
+                </div>
+              </a>
+              <h3>10 Second Clip from the Client's Video</h3>
+              <p>Gaming content with fast pacing.</p>
+            </article>
+            <article class="edit-card">
+              <a class="edit-link" href="https://player.vimeo.com/video/1166747598?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" target="_blank" rel="noopener">
+                <div class="edit-thumb">
+                  <iframe src="https://player.vimeo.com/video/1166747598?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" title="Marketing Agency AD" loading="lazy" allowfullscreen></iframe>
+                  <span class="edit-platform">Vimeo</span>
+                  <span class="edit-play">▶</span>
+                </div>
+              </a>
+              <h3>Marketing Agency AD</h3>
+              <p>Professional motion graphics and branding.</p>
+            </article>
+            <article class="edit-card">
+              <a class="edit-link" href="https://player.vimeo.com/video/1166748259?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" target="_blank" rel="noopener">
+                <div class="edit-thumb">
+                  <iframe src="https://player.vimeo.com/video/1166748259?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" title="Trending Cat Videos" loading="lazy" allowfullscreen></iframe>
+                  <span class="edit-platform">Vimeo</span>
+                  <span class="edit-play">▶</span>
+                </div>
+              </a>
+              <h3>Trending Cat Videos</h3>
+              <p>Short-form content optimized for social media.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2 class="section-title reveal">Let's work together</h2>
+      <p class="section-desc reveal">
+        Tell me about your channel, your schedule, and the style you're going for. I'll handle the timeline.
+      </p>
+      <div class="contact-grid">
+        <div class="contact-block reveal">
+          <h3>Contact</h3>
+          <p>Email or DM me with your project details, examples you like, and your deadline.</p>
+          <ul class="contact-links">
+            <li><a href="mailto:afraziaedits@gmail.com">afraziaedits@gmail.com</a></li>
+            <li><a href="https://discord.com/users/744544447198527555" target="_blank" rel="noopener">Discord</a></li>
+            <li><a href="https://wa.me/03124138669" target="_blank" rel="noopener">WhatsApp</a></li>
+            <li><a href="https://www.reddit.com/u/r1singmoon/s/eKVIzrHijw" target="_blank" rel="noopener">Reddit</a></li>
+          </ul>
+        </div>
+        <div class="contact-block reveal">
+          <h3>What I'm best at</h3>
+          <ul class="skills-list">
+            <li>Gaming clips, montages, and stream clipping</li>
+            <li>Short-form content (TikTok, Reels, Shorts)</li>
+            <li>IRL vlogs and lifestyle content</li>
+            <li>Story-driven content and motion graphics</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Editing Portfolio. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
