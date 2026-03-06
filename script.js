@@ -1,108 +1,62 @@
-// Current year in footer
-document.getElementById('year').textContent = new Date().getFullYear();
+document.addEventListener("DOMContentLoaded", () => {
+  const yearSpan = document.getElementById("year");
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
 
-// ----- Icon placeholders: show image when src is set -----
-function checkImg(el, wrapClass) {
-  const wrap = el?.closest(wrapClass);
-  if (!el || !wrap) return;
-  const hasSrc = el.getAttribute('src') && el.getAttribute('src').trim() !== '';
-  if (hasSrc) wrap.classList.add('has-img');
-  else wrap.classList.remove('has-img');
-}
+  const revealEls = document.querySelectorAll(".video-card.reveal");
 
-function initIconPlaceholders() {
-  const headerIcon = document.getElementById('header-icon');
-  const heroIcon = document.getElementById('hero-icon');
-  checkImg(headerIcon, '.icon-placeholder-header');
-  checkImg(heroIcon, '.hero-icon-placeholder');
-  [headerIcon, heroIcon].forEach((img) => {
-    if (!img) return;
-    img.addEventListener('load', () => img.closest('.icon-placeholder-header, .hero-icon-placeholder')?.classList.add('has-img'));
-  });
-}
-initIconPlaceholders();
-
-// ----- Scroll reveal -----
-const revealEls = document.querySelectorAll('.reveal');
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('revealed');
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.3,
       }
-    });
-  },
-  { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
-);
+    );
 
-revealEls.forEach((el) => revealObserver.observe(el));
-
-// Hero elements: reveal on load with stagger
-const heroReveals = document.querySelectorAll('.hero .reveal');
-heroReveals.forEach((el, i) => {
-  el.style.transitionDelay = `${0.1 * i}s`;
-});
-setTimeout(() => {
-  heroReveals.forEach((el) => el.classList.add('revealed'));
-}, 80);
-
-// ----- Stat counter animation -----
-function animateValue(el, end) {
-  const duration = 1400;
-  const start = 0;
-  const startTime = performance.now();
-
-  function update(currentTime) {
-    const elapsed = currentTime - startTime;
-    const progress = Math.min(elapsed / duration, 1);
-    const easeOut = 1 - Math.pow(1 - progress, 3);
-    const current = Math.floor(start + (end - start) * easeOut);
-    el.textContent = current;
-    if (progress < 1) requestAnimationFrame(update);
+    revealEls.forEach((el) => observer.observe(el));
+  } else {
+    revealEls.forEach((el) => el.classList.add("in-view"));
   }
 
-  requestAnimationFrame(update);
-}
+  // Video track: seamless loop via JS (avoids CSS animation glitch)
+  const videoTrack = document.getElementById("video-track");
+  const videoWrapper = videoTrack && videoTrack.closest(".video-slider-wrapper");
+  if (videoTrack && videoWrapper) {
+    const speedPxPerSec = 80;
+    let position = 0;
+    let setWidth = 0;
+    let rafId = null;
+    let paused = false;
 
-const statObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      const valueEl = entry.target.querySelector('.stat-value');
-      if (!valueEl) return;
-      const count = parseInt(valueEl.dataset.count, 10);
-      animateValue(valueEl, count);
-      statObserver.unobserve(entry.target);
-    });
-  },
-  { threshold: 0.4 }
-);
+    function measure() {
+      setWidth = videoTrack.scrollWidth / 2;
+      return setWidth > 0;
+    }
 
-document.querySelectorAll('.stat').forEach((stat) => statObserver.observe(stat));
+    function tick() {
+      if (!paused && setWidth > 0) {
+        position += speedPxPerSec / 60;
+        if (position >= setWidth) position -= setWidth;
+        videoTrack.style.transform = `translate3d(${-position}px, 0, 0)`;
+      }
+      rafId = requestAnimationFrame(tick);
+    }
 
-// ----- Carousel arrows: quick scroll burst -----
-const NUDGE_DURATION_MS = 2200;
+    videoWrapper.addEventListener("mouseenter", () => { paused = true; });
+    videoWrapper.addEventListener("mouseleave", () => { paused = false; });
 
-document.querySelectorAll('.carousel-scroll').forEach((carousel) => {
-  const track = carousel.querySelector('.carousel-track');
-  const prevBtn = carousel.querySelector('.carousel-prev');
-  const nextBtn = carousel.querySelector('.carousel-next');
-  if (!track || !prevBtn || !nextBtn) return;
-
-  function nudge(direction) {
-    track.classList.remove('nudge-next', 'nudge-prev');
-    prevBtn.disabled = true;
-    nextBtn.disabled = true;
-
-    track.classList.add(direction === 'next' ? 'nudge-next' : 'nudge-prev');
-
-    setTimeout(() => {
-      track.classList.remove('nudge-next', 'nudge-prev');
-      prevBtn.disabled = false;
-      nextBtn.disabled = false;
-    }, NUDGE_DURATION_MS);
+    if (measure()) {
+      videoTrack.classList.add("js-marquee");
+      rafId = requestAnimationFrame(tick);
+    }
+    window.addEventListener("resize", () => { measure(); });
   }
-
-  nextBtn.addEventListener('click', () => nudge('next'));
-  prevBtn.addEventListener('click', () => nudge('prev'));
 });
